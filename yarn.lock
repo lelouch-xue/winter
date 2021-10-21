@@ -1064,7 +1064,7 @@
   resolved "https://registry.nlark.com/@types/normalize-package-data/download/@types/normalize-package-data-2.4.1.tgz?cache=0&sync_timestamp=1629708441689&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnormalize-package-data%2Fdownload%2F%40types%2Fnormalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha1-0zV0eaD9/dWQf+Z+F+CoXJBuEwE=
 
-"@types/preloadjs@^0.6.32":
+"@types/preloadjs@*", "@types/preloadjs@^0.6.32":
   version "0.6.32"
   resolved "https://registry.nlark.com/@types/preloadjs/download/@types/preloadjs-0.6.32.tgz#12cff7c7f92e3838a780d438ce49c8cec981830d"
   integrity sha1-Es/3x/kuODingNQ4zknIzsmBgw0=
@@ -1093,6 +1093,14 @@
   dependencies:
     "@types/mime" "^1"
     "@types/node" "*"
+
+"@types/soundjs@^0.6.28":
+  version "0.6.28"
+  resolved "https://registry.npmmirror.com/@types/soundjs/download/@types/soundjs-0.6.28.tgz#cf748e90dd78f66c3f54fab41536f60a42c8c002"
+  integrity sha1-z3SOkN149mw/VPq0FTb2CkLIwAI=
+  dependencies:
+    "@types/createjs-lib" "*"
+    "@types/preloadjs" "*"
 
 "@types/source-list-map@*":
   version "0.1.2"
@@ -4329,6 +4337,11 @@ hosted-git-info@^2.1.4:
   version "2.8.9"
   resolved "https://registry.npmmirror.com/hosted-git-info/download/hosted-git-info-2.8.9.tgz?cache=0&sync_timestamp=1632811821053&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fhosted-git-info%2Fdownload%2Fhosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
   integrity sha1-3/wL+aIcAiCQkPKqaUKeFBTa8/k=
+
+howler@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.nlark.com/howler/download/howler-2.2.3.tgz#a2eff9b08b586798e7a2ee17a602a90df28715da"
+  integrity sha1-ou/5sItYZ5jnou4XpgKpDfKHFdo=
 
 hpack.js@^2.1.6:
   version "2.1.6"

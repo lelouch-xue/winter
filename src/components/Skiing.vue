@@ -16,8 +16,8 @@ export default {
       isPlaying: false,
       loopnum: -1,
       eleSpeed: 5,
-      cloudSpeed: 2,
-      steps: [200, 600, 1000, 1400, 1800],
+      cloudSpeed: 1.5,
+      steps: [200, 500, 800, 1100, 1400],
     }
   },
   mounted() {
@@ -103,19 +103,19 @@ export default {
   .cloud-item {
     bottom: 20vh;
     position: absolute;
-    background-image: url("../assets/imgs/abc_2.png");
-    background-size: 297.5vh 50vh;
+    background-image: url("../assets/imgs/cloud.png");
+    background-size: 200vh 50vh;
     width: 100vw;
     height: 50vh;
   }
 
   .element-item {
     bottom: 0;
-    background-image: url("../assets/imgs/abc_1.png");
-    background-size: 297.5vh 50vh;
+    background-image: url("../assets/imgs/element.png");
+    background-size: 1600px 400px;
     background-repeat: no-repeat;
     width: 100vw;
-    height: 50vh;
+    height: 400px;
   }
 
   .bg-item {

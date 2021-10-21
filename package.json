@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "howler": "^2.2.3",
     "preload-js": "^0.6.3",
     "vue": "^2.6.11"
   },
   "devDependencies": {
     "@types/preloadjs": "^0.6.32",
+    "@types/soundjs": "^0.6.28",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",

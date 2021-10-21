@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <c-loading @start="handleStartScense" v-if="index === 0" />
-    <c-home v-if="index === 1"></c-home>
+    <c-loading @setStep="handleStartScense" v-if="index === 0" />
+    <c-home v-if="index === 1" @setStep="handleStartScense"></c-home>
     <c-skiing v-if="index === 2"></c-skiing>
+    <c-audio v-if="index != 0"></c-audio>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Loading from "./components/Loading.vue"
 import Home from "./components/Home.vue"
 import Skiing from "./components/Skiing.vue"
+import Audio from "./components/Audio.vue"
 
 export default {
   name: "App",
@@ -22,11 +24,12 @@ export default {
     "c-loading": Loading,
     "c-home": Home,
     "c-skiing": Skiing,
+    "c-audio": Audio,
   },
   methods: {
-    handleStartScense() {
+    handleStartScense(step) {
       setTimeout(() => {
-        this.index = 2
+        this.index = step
       }, 200)
     },
   },

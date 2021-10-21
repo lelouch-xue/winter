@@ -995,6 +995,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/createjs-lib@*":
+  version "0.0.29"
+  resolved "https://registry.nlark.com/@types/createjs-lib/download/@types/createjs-lib-0.0.29.tgz#fae82e3ba8606663b190e789cec7d9c728fc41d7"
+  integrity sha1-+uguO6hgZmOxkOeJzsfZxyj8Qdc=
+
 "@types/express-serve-static-core@*", "@types/express-serve-static-core@^4.17.18":
   version "4.17.24"
   resolved "https://registry.nlark.com/@types/express-serve-static-core/download/@types/express-serve-static-core-4.17.24.tgz#ea41f93bf7e0d59cd5a76665068ed6aab6815c07"
@@ -1058,6 +1063,13 @@
   version "2.4.1"
   resolved "https://registry.nlark.com/@types/normalize-package-data/download/@types/normalize-package-data-2.4.1.tgz?cache=0&sync_timestamp=1629708441689&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnormalize-package-data%2Fdownload%2F%40types%2Fnormalize-package-data-2.4.1.tgz#d3357479a0fdfdd5907fe67e17e0a85c906e1301"
   integrity sha1-0zV0eaD9/dWQf+Z+F+CoXJBuEwE=
+
+"@types/preloadjs@^0.6.32":
+  version "0.6.32"
+  resolved "https://registry.nlark.com/@types/preloadjs/download/@types/preloadjs-0.6.32.tgz#12cff7c7f92e3838a780d438ce49c8cec981830d"
+  integrity sha1-Es/3x/kuODingNQ4zknIzsmBgw0=
+  dependencies:
+    "@types/createjs-lib" "*"
 
 "@types/q@^1.5.1":
   version "1.5.5"

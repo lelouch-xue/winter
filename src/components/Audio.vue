@@ -35,8 +35,8 @@
       ></polygon>
     </svg>
     <audio ref="audio">
-      <source src="../assets/music.mp3" />
-      <source src="../assets/music.wav" />
+      <source :src="mp3" />
+      <source :src="wav" />
     </audio>
   </div>
 </template>
@@ -47,7 +47,14 @@ export default {
     return {
       sound: null,
       isMute: true,
+      mp3: "",
+      wav: "",
     }
+  },
+  created() {
+    this.mp3 = window.queue.getItem("mp3").src
+    this.wav = window.queue.getItem("wav").src
+    console.log(this.mp3, this.wav)
   },
   mounted() {
     console.log("audio created")

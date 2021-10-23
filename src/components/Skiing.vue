@@ -1,43 +1,69 @@
 <template>
   <div class="skiing-page">
     <div class="skiing-bg"></div>
-    <div ref="cloud" class="bg-item cloud-item slide-ani-item"></div>
-    <div ref="element" class="bg-item element-item slide-ani-item"></div>
+    <div ref="cloud" class="bg-item cloud-item slide-ani-item" :style="`background-image: url(${cloud});`"></div>
+    <div ref="element" class="bg-item element-item slide-ani-item" :style="`background-image: url(${element});`"></div>
     <button @click="next">下一个</button>
+    <c-animation></c-animation>
   </div>
 </template>
 
 <script>
+import Animation from "./Animation.vue"
 export default {
   name: "skiing",
+  components: {
+    "c-animation": Animation,
+  },
   data() {
     return {
       curstep: 0,
       isPlaying: false,
       loopnum: -1,
-      eleSpeed: 5,
-      cloudSpeed: 1.5,
-      steps: [200, 500, 800, 1100, 1400],
+      eleSpeed: 0.08,
+      cloudSpeed: 0.04,
+      steps: [8, 14, 20, 26, 32],
+      size: 1,
+      cloud: "",
+      element: "",
+      fps: 0,
     }
+  },
+  created() {
+    this.cloud = window.queue.getResult("cloud").src
+    this.element = window.queue.getResult("element").src
+    // this.cloud = window.queue.getItem("cloud").src
+    // this.element = window.queue.getItem("element").src
   },
   mounted() {
     this.isPlaying = true
-
+    const head = document.head || document.getElementsByTagName("head")[0]
+    this.size = +(document.documentElement.style.fontSize || getComputedStyle(head).fontSize).match(/[0-9-.]+/i)
+    console.log(this.size)
     this.startRender()
+
+    this.cloud = window.queue.getResult("cloud").src
+    this.element = window.queue.getResult("element").src
+
+    console.log(window.queue.getResult("cloud").src)
   },
   methods: {
     render() {
       const _ele = this.$refs.element
       const _cloud = this.$refs.cloud
       if (!this.isPlaying || !_ele) return
+
+      this.fps++
+      if (this.fps % 2 === 0) return
+
       const _elebpx = getComputedStyle(_ele).backgroundPositionX
       const _cloudbpx = getComputedStyle(_cloud).backgroundPositionX
       const _len = this.steps.length
       if (this.curstep >= _len) {
         return
       }
-      let _elebpxn = +_elebpx.match(/[0-9-]+/i)
-      let _cloudbpxn = +_cloudbpx.match(/[0-9-]+/i)
+      let _elebpxn = +_elebpx.match(/[0-9-.]+/i) / this.size
+      let _cloudbpxn = +_cloudbpx.match(/[0-9-.]+/i) / this.size
 
       if (Math.abs(_elebpxn) >= this.steps[this.curstep]) {
         this.$nextTick(() => {
@@ -49,10 +75,11 @@ export default {
         this.isPlaying = false
         return
       }
+
       _elebpxn -= this.eleSpeed
       _cloudbpxn -= this.cloudSpeed
-      _ele.style.backgroundPositionX = `${_elebpxn}px`
-      _cloud.style.backgroundPositionX = `${_cloudbpxn}px`
+      _ele.style.backgroundPositionX = `${_elebpxn}rem`
+      _cloud.style.backgroundPositionX = `${_cloudbpxn}rem`
     },
     startRender() {
       const _this = this
@@ -66,14 +93,12 @@ export default {
     },
     stopRender() {
       cancelAnimationFrame(this.loopnum)
-      console.log(this.loopnum)
     },
 
     next() {
-      console.log("12313")
       if (this.isPlaying) return
-      this.isPlaying = true
       if (this.curstep > this.steps.length - 1) return
+      this.isPlaying = true
       this.startRender()
     },
   },
@@ -94,7 +119,6 @@ export default {
   }
 
   .skiing-bg {
-    background-image: url("../assets/imgs/abc_3.png");
     width: 100vw;
     height: 100vh;
     background-size: contain;
@@ -103,7 +127,6 @@ export default {
   .cloud-item {
     bottom: 20vh;
     position: absolute;
-    background-image: url("../assets/imgs/cloud.png");
     background-size: 200vh 50vh;
     width: 100vw;
     height: 50vh;
@@ -111,7 +134,6 @@ export default {
 
   .element-item {
     bottom: 0;
-    background-image: url("../assets/imgs/element.png");
     background-size: 1600px 400px;
     background-repeat: no-repeat;
     width: 100vw;

@@ -30,7 +30,7 @@ export default {
       const _index = PrefixZero(i)
       const _obj = {
         id: `skiing_${_index}`,
-        src: `./assets/imgs/skiing/skiing_${_index}.png`,
+        src: `/assets/imgs/skiing/skiing_${_index}.png`,
       }
       manifest.push(_obj)
     }
@@ -42,13 +42,10 @@ export default {
   },
   methods: {
     handleFileProgress(evt) {
-      console.log(evt)
       this.progress = parseInt((evt.loaded || 0) * 100)
       this.label = "加载中..."
     },
-    handleLoadComplete(evt) {
-      console.log("加载完成")
-      console.log(evt)
+    handleLoadComplete() {
       this.label = "加载完成"
       this.$emit("setStep", 1)
     },

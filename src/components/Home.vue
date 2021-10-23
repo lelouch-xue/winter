@@ -39,9 +39,6 @@ export default {
 
 <style lang="scss" scoped>
 .home-page {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   position: relative;
   height: 100vh;
   width: 100vw;

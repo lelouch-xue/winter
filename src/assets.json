@@ -1,52 +1,52 @@
 [
   {
-    "src": "./assets/imgs/abc_03.png",
+    "src": "/assets/imgs/abc_03.png",
     "id": "abc_03"
   },
   {
-    "src": "./assets/imgs/cloud.png",
+    "src": "/assets/imgs/cloud.png",
     "id": "cloud"
   },
   {
-    "src": "./assets/imgs/element.png",
+    "src": "/assets/imgs/element.png",
     "id": "element"
   },
   {
     "id": "mp3",
-    "src": "./assets/music.mp3"
+    "src": "/assets/music.mp3"
   },
   {
     "id": "wav",
-    "src": "./assets/music.wav"
+    "src": "/assets/music.wav"
   }
   ,
   {
     "id": "game-people",
-    "src": "./assets/imgs/game-people.png"
+    "src": "/assets/imgs/game-people.png"
   }
   ,
   {
     "id": "index-bg",
-    "src": "./assets/imgs/index-bg.png"
+    "src": "/assets/imgs/index-bg.png"
   },
   {
     "id": "index-btn",
-    "src": "./assets/imgs/index-btn.png"
+    "src": "/assets/imgs/index-btn.png"
   },
   {
     "id": "index-people",
-    "src": "./assets/imgs/index-people.png"
+    "src": "/assets/imgs/index-people.png"
   },
   {
     "id": "index-tips",
-    "src": "./assets/imgs/index-tips.png"
+    "src": "/assets/imgs/index-tips.png"
   },
   {
     "id": "index-title",
-    "src": "./assets/imgs/index-title.png"
+    "src": "/assets/imgs/index-title.png"
   },
   {
     "id": "tree",
-    "src": "./assets/imgs/tree.png"
+    "src": "/assets/imgs/tree.png"
   }
 ]

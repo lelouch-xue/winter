@@ -1,8 +1,8 @@
 <template>
   <div class="skiing-page">
     <div class="skiing-bg"></div>
-    <div ref="cloud" class="bg-item cloud-item slide-ani-item" :style="`background-image: url(${cloud});`"></div>
-    <div ref="element" class="bg-item element-item slide-ani-item" :style="`background-image: url(${element});`"></div>
+    <div ref="cloud" class="bg-item cloud-item slide-ani-item"></div>
+    <div ref="element" class="bg-item element-item slide-ani-item"></div>
     <button @click="next">下一个</button>
     <c-animation></c-animation>
   </div>
@@ -24,28 +24,16 @@ export default {
       cloudSpeed: 0.04,
       steps: [8, 14, 20, 26, 32],
       size: 1,
-      cloud: "",
-      element: "",
       fps: 0,
     }
   },
-  created() {
-    this.cloud = window.queue.getResult("cloud").src
-    this.element = window.queue.getResult("element").src
-    // this.cloud = window.queue.getItem("cloud").src
-    // this.element = window.queue.getItem("element").src
-  },
+  created() {},
   mounted() {
     this.isPlaying = true
     const head = document.head || document.getElementsByTagName("head")[0]
     this.size = +(document.documentElement.style.fontSize || getComputedStyle(head).fontSize).match(/[0-9-.]+/i)
-    console.log(this.size)
+
     this.startRender()
-
-    this.cloud = window.queue.getResult("cloud").src
-    this.element = window.queue.getResult("element").src
-
-    console.log(window.queue.getResult("cloud").src)
   },
   methods: {
     render() {
@@ -125,6 +113,7 @@ export default {
   }
 
   .cloud-item {
+    background-image: url("/assets/imgs/cloud.png");
     bottom: 20vh;
     position: absolute;
     background-size: 200vh 50vh;
@@ -133,6 +122,7 @@ export default {
   }
 
   .element-item {
+    background-image: url("/assets/imgs/element.png");
     bottom: 0;
     background-size: 1600px 400px;
     background-repeat: no-repeat;

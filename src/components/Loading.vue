@@ -12,6 +12,7 @@
 <script>
 // import "preload"
 import { PrefixZero } from "../util"
+import assets from "../assets.json"
 export default {
   name: "loading",
   data() {
@@ -23,28 +24,7 @@ export default {
   },
   created() {
     window.queue = new window.createjs.LoadQueue(false)
-    const manifest = [
-      {
-        src: "./assets/imgs/abc_03.png",
-        id: "abc_03",
-      },
-      {
-        src: "./assets/imgs/cloud.png",
-        id: "cloud",
-      },
-      {
-        src: "./assets/imgs/element.png",
-        id: "element",
-      },
-      {
-        id: "mp3",
-        src: "./assets/music.mp3",
-      },
-      {
-        id: "wav",
-        src: "./assets/music.wav",
-      },
-    ]
+    const manifest = [...assets]
 
     for (let i = 0; i < 30; i++) {
       const _index = PrefixZero(i)
